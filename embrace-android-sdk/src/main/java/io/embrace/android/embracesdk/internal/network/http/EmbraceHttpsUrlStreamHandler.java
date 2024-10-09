@@ -52,6 +52,7 @@ final class EmbraceHttpsUrlStreamHandler extends EmbraceUrlStreamHandler {
             return connection;
         }
 
+        // inject trace parent
         injectTraceparent(connection);
 
         if (enableRequestSizeCapture && !connection.getRequestProperties().containsKey("Accept-Encoding")) {

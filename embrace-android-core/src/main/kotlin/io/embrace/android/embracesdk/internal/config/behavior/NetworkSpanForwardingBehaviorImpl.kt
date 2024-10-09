@@ -14,6 +14,8 @@ class NetworkSpanForwardingBehaviorImpl(
     companion object {
         /**
          * Header name for the W3C traceparent
+         *
+         * // TODO: follow where this is going
          */
         const val TRACEPARENT_HEADER_NAME: String = "traceparent"
 
@@ -21,6 +23,7 @@ class NetworkSpanForwardingBehaviorImpl(
     }
 
     override fun isNetworkSpanForwardingEnabled(): Boolean {
+        println("alex: isNetworkSpanForwardingEnabled remote?.pctEnabled: ${remote?.pctEnabled}")
         return thresholdCheck.isBehaviorEnabled(remote?.pctEnabled ?: DEFAULT_PCT_ENABLED)
     }
 }

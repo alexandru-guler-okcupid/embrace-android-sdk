@@ -69,6 +69,7 @@ public final class Embrace implements SdkApi {
 
     @Override
     public void start(@NonNull Context context) {
+        System.out.println("alex: starting embrace");
         if (verifyNonNullParameters("start", context)) {
             start(context, AppFramework.NATIVE);
         }
